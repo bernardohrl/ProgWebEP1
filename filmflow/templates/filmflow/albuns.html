@@ -1,0 +1,13 @@
+{% extends "filmflow/base.html" %}
+
+{% block title %}Albuns List:{% endblock %}
+
+{% block body %}
+<h2> Album List </h2>
+
+{% for album in albuns %}
+	<h4> <a href=""> {{album}} </a> </h4>
+{% endfor %}
+
+{% endblock %}
+
