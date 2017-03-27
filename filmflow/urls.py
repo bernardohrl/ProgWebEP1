@@ -9,7 +9,7 @@ urlpatterns = [
     #film_flow/albuns/
     url(r'^albuns/$', views.show_albuns),
 
-    # #film_flow/musics/
-    # url(r'^/musics/$', views.show_musics),
+    #film_flow/musics/
+    url(r'^musics/$', views.show_musics), 
 
 ]
