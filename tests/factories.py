@@ -17,6 +17,5 @@ class MusicFactory(factory.Factory):
 	class Meta:
 		model = Music
 
-
-	album = 0
-	name = factory.Iterator(['Duas Cidades'], ['Jah Jah Revolta'], ['Lucro'])
+	album = factory.SubFactory(AlbumFactory)
+	name = 'Duas Cidades'

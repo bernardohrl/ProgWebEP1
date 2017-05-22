@@ -5,6 +5,8 @@ from factories import AlbumFactory
 from django.core.exceptions import ValidationError
 
 
+################################################ MODEL TESTS
+
 def test_create_album(db):
 	album = AlbumFactory()
 
@@ -37,3 +39,8 @@ def test_album_arthist_too_big(db):
 
 	with pytest.raises(ValidationError):
 		album.full_clean()
+
+def test_to_string(db):
+	album = AlbumFactory()
+
+	assert str(album) == album.name + "  [" + album.arthist + " - " + str(album.year) + "]"

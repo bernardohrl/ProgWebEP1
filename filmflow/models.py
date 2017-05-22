@@ -13,7 +13,7 @@ class Album(models.Model):
 
 class Music(models.Model):
 	album = models.ForeignKey(Album, on_delete = models.CASCADE)
-	name = models.CharField(max_length = 200)
+	name = models.CharField(max_length = 100)
 
 	def __str__(self):
 		return self.name + " - " + self.album.arthist
