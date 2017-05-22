@@ -1,11 +1,22 @@
-# from filmflow.models import *
-# import factory
+from filmflow.models import Album
+from filmflow.models import Music
+import factory
 
-# class AlbumFactory(factory.django.DjangoModelFactory):
-# 	FACTORY_FOR = Album
+class AlbumFactory(factory.Factory):
+	class Meta:
+		model = Album
 
-# 	arthist = "artista"
-# 	name = "nome"
-# 	genre = "genero"
-# 	year = 2000
-#   
+	id = 0
+	arthist = 'Baina System'
+	name = 'Duas Cidades'
+	genre = 'Samba & Rock & Rap'
+	year = 2015
+
+
+class MusicFactory(factory.Factory):
+	class Meta:
+		model = Music
+
+
+	album = 0
+	name = factory.Iterator(['Duas Cidades'], ['Jah Jah Revolta'], ['Lucro'])

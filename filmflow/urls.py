@@ -12,9 +12,6 @@ urlpatterns = [
     #film_flow/musics/
     url(r'^musics/$', views.show_musics, name = 'musics_list'),
 
-
-    ############################### Problema - ver em duvidas #################################
-
     #film_flow/albuns/:id
     url(r'^albuns/(?P<album_id>[0-9]+)/$', views.album_detail, name = 'album_detail'),
 
