@@ -1,0 +1,3 @@
+{
+  "tests/test_album.py::test_album_genre_too_big": true
+}
