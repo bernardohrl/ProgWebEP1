@@ -1,0 +1,9 @@
+echo "\n\nTesting.....\n\n"
+
+if pytest; then
+	echo "\n\n\n\n\n\t\t\t\tAll Tests Passed, commiting now!\n\n\n\n\n\n"
+
+else
+	echo "\n\n\n\n\n\t\t\t\tTests didn't Pass, aborting commit...\n\n\n\n\n"
+	exit 1
+fi	
