@@ -17,5 +17,6 @@ class MusicFactory(factory.Factory):
 	class Meta:
 		model = Music
 
+	id = 0
 	album = factory.SubFactory(AlbumFactory)
 	name = 'Duas Cidades'
