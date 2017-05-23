@@ -40,3 +40,19 @@ def test_music_detail(rf, db):
 	request = rf.get('/music/' + str(music.id) + '/')
 	response = music_detail(request, music.id)
 	assert response.status_code == 200
+
+
+################################################ URL TESTS
+
+@pytest.mark.urls('filmflow.urls')
+def test_musics_url(client, db):
+	assert client.get('/musics/').status_code == 200
+
+
+@pytest.mark.urls('filmflow.urls')
+def test_music_detail_url(client, db):
+	music = MusicFactory()
+	music.save()
+	id  = music.id
+
+	assert client.get('/musics/' + str(id) + '/').status_code == 200

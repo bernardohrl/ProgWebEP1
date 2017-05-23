@@ -48,12 +48,12 @@ def test_to_string(db):
 
 ################################################ VIEW TESTS
 
-def test_albuns(rf, db):
+def test_albuns_view(rf, db):
     request = rf.get('/albuns/')
     response = show_albuns(request)
     assert response.status_code == 200
 
-def test_album_detail(rf, db):
+def test_album_detail_view(rf, db):
 	album = AlbumFactory()
 	album.save()
 
@@ -62,7 +62,28 @@ def test_album_detail(rf, db):
 	assert response.status_code == 200
 
 #Testing Home
-def test_home(rf):
+def test_home_view(rf):
 	request = rf.get('/')
 	response = home(request)
 	assert response.status_code == 200
+
+
+################################################ URL TESTS
+
+#Testing Home
+@pytest.mark.urls('filmflow.urls')
+def test_home_url(client):
+    assert client.get('/').status_code == 200
+
+@pytest.mark.urls('filmflow.urls')
+def test_album_detail_url(client, db):
+	album = AlbumFactory()
+	album.save()
+	id = album.id
+
+	assert client.get('/albuns/' + str(id) + '/').status_code == 200
+
+@pytest.mark.urls('filmflow.urls')
+def test_albuns_url(client, db):
+	assert client.get('/albuns/').status_code == 200
+
