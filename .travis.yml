@@ -9,5 +9,6 @@ install:
  - pip install -U pytest
  - pip install pytest-cov
  - pip install factory_boy
+ - echo $PYTHONPATH
 
-script: pytest
+script: PYTHONPATH=. pytest
