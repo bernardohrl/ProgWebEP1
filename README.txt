@@ -22,7 +22,12 @@ if pytest; then
 else
 	echo "\n\n\n\n\n\t\t\t\tTests didn't Pass, aborting commit...\n\n\n\n\n"
 	exit 1
-fi	
+fi
 
 
 Ou, pegue a pasta hook, entre em ProgWebEP1/.git/, delete a pasta atual e cole-a.
+
+
+
+Relatório de cobertura:
+py.test --cov-report html:cov_html --cov=filmflow tests/
