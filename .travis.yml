@@ -11,4 +11,5 @@ install:
  - pip install factory_boy
  - echo $PYTHONPATH
 
-script: PYTHONPATH=. pytest
+script:
+ - PYTHONPATH=.pytest
