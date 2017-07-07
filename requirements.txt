@@ -1,8 +1,8 @@
 django
 
-psycopg2
+pytest
 
-coverage
+pytest-cov
 
 flake8
 
